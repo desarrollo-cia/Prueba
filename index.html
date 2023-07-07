@@ -1,0 +1,33 @@
+<div class="formbold-main- mt-5">
+	<div class="formbold-form-wrapper" style="background-color: transparent;">
+	<form method="post" action="actualizar_equipo_datos">
+		{% csrf_token %}
+		<label>N° del Activo: <span><h3>{{ equipo_editar_motivos.numero_activo }}</h3></span></label>
+
+		<div class="formbold-mb-3 mt-3">
+			<div>
+				<label for="Motivo_Actualizacion" class="formbold-form-label">
+					Motivo:
+				</label>
+				<input type="text" name="Motivo_Actualizacion" id="Motivo_Actualizacion" class="formbold-form-input"
+					placeholder="Ingresa el motvo del cambio" />
+			</div>
+		</div>
+		<div class="formbold-input-mb-3">
+			<div class="formbold-textarea">
+				<textarea
+					rows="6"
+					name="Anotaciones"
+					id="Anotaciones"
+					placeholder="Escribe tus Anotaciones..."
+					class="formbold-form-input"
+				></textarea>
+				<label for="Anotaciones" class="formbold-form-label"> Anotaciones </label>
+			</div>
+		</div>
+		<input type="hidden" name="numero_activo" value="{{ equipo_editar_motivos.numero_activo }}">
+		<input type="hidden" name="fecha" value="{% now "Y-m-d" %}">
+			<input type="submit" value="Continuar" class="Agregar_Equipo_Submit ">
+	</form>
+</div>
+	</div>

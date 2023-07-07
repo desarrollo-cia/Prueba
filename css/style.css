@@ -1,0 +1,508 @@
+/*<editor-fold desc="TITULO DE LA PAGINA">*/
+.Titulo_Pagina{
+    padding-left: 220px;
+    font-size: 60px;
+    font-family: "Agency FB";
+    font-weight: 600;
+    color: #0B1B32;
+    text-shadow: 2px 2px 2px #2f60b9;
+    text-align: center;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="SELECTORES SOFTWARE">*/
+.Selectores_Software{
+    padding-top: 20px;
+    padding-left: 220px;
+    text-align: center;
+
+}
+
+.Selectores_Software Button{
+    background-color: rgba(106,105,105);
+    border-radius: 10px;
+    color: #f2f2f2;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.Selectores_Software Button:hover{
+    background-color: rgba(38,94,172);
+    box-shadow: 6px 6px #B8B8B8;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="SECCION DE CONSULTA EN TABLA">*/
+.Tabla_Software{
+    padding-left: 220px;
+    padding-bottom: 100px;
+    margin: 50px;
+}
+
+.Tabla_Consulta_Software tbody tr td{
+    border-top: 1px solid #153057;
+    color: #2f60b9;
+    font-size: 16px;
+    text-align: center;
+}
+
+.Boton_Editar_Software{
+    background: rgba(245, 207, 20, 0.4);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.Boton_Editar_Software:hover{
+    background: rgb(224, 186, 22);
+    color: white;
+}
+
+.Boton_Eliminar_Software{
+    background: rgba(252, 21, 21, 0.4);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.Boton_Eliminar_Software:hover{
+    background: rgba(252, 21, 21);
+    color: white;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="POP-UP EDITAR SOFTEWARE">*/
+
+.contenedor_editar_software{
+    position: fixed;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    background: #CDDDF4;
+    z-index: 200;
+    border-radius: 10px;
+    border: 3px solid #0B1B32;
+    box-shadow: 25px 25px rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
+}
+
+.boton_cerrar_popup{
+    background: red;
+    position: absolute;
+    border: none;
+    width: 35px;
+    height: 22px;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    right: 2%;
+    top: 3%;
+}
+
+.boton_cerrar_popup:hover{
+    box-shadow: 3px 3px rgba(255, 0, 0, 0.40);
+}
+
+.Titulo_PopUp{
+    position: absolute;
+    width: 20%;
+    top: 5%;
+    left: 40%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.Elementos_Editables{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+.Agregar_Software{
+    padding-left: 300px;
+    padding-top: 75px;
+    padding-bottom: 100px;
+    display: none;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="SECCION DE AGREGAR SOFTWARE">*/
+.Agregar_Software_Submit{
+    background-color: rgba(106,105,105);
+    border-radius: 10px;
+    color: #f2f2f2;
+    font-size: large;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+}
+
+.Agregar_Software_Submit:hover{
+    background-color: rgba(38,94,172);
+    box-shadow: 3px 3px #B8B8B8;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="SECCION DE MANEJO DE PAQUETERIAS">*/
+.Administrar_Paqueterias{
+    padding-left: 220px;
+    padding-bottom: 100px;
+    margin: 50px;
+    display: none;
+}
+
+.Selectores_Paqueterias{
+    text-align: center;
+    padding-right: 55px;
+}
+
+.Selectores_Paqueterias Button{
+    background-color: rgba(106,105,105);
+    border-radius: 10px;
+    color: #f2f2f2;
+    font-size: 14px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.Selectores_Paqueterias Button:hover{
+    background-color: rgba(38,94,172);
+    box-shadow: 6px 6px #B8B8B8;
+}
+
+/*<editor-fold desc="SECCION AGREGAR PAQUETERIA">*/
+.Contenedor_Agregar_Paqueteria{
+    display: none;
+    padding-top: 75px;
+}
+
+.Agregar_Select_Software button{
+    background-color: rgba(106,105,105);
+    color: white;
+    padding: 5px;
+    font-weight: 700;
+    font-size: 18px;
+    -webkit-appearance: button;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 12px;
+    margin-left: 20px;
+}
+
+.Agregar_Select_Software button:hover{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.45);
+    background-color: rgba(38,94,172);
+}
+
+.Agregar_Select_Software select{
+    background-color: #2f60b9;
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="SECCION CONSULTAR PAQUETERIAS">*/
+.Contenedor_Consultar_Paqueterias{
+    padding-top: 75px;
+    padding-right: 50px;
+}
+
+.tabla_paqueteria_software tbody tr td{
+    border-top: 1px solid #153057;
+    color: #2f60b9;
+    font-size: 18px;
+    text-align: center;
+}
+
+.Boton_Editar_Paqueteria{
+    background: rgba(245, 207, 20, 0.4);
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.Boton_Editar_Paqueteria:hover{
+    background: rgb(224, 186, 22);
+    color: white;
+    box-shadow: 4px 4px rgba(245, 207, 20, 0.6);
+}
+
+
+.Boton_Eliminar_Paqueteria{
+    background: rgba(252, 21, 21, 0.4);
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.Boton_Eliminar_Paqueteria:hover{
+    background: rgba(252, 21, 21);
+    color: white;
+}
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="SECCION EDITAR PAQUETERIAS">*/
+.popup_editar_paqueteria{
+    position: fixed;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    z-index: 300;
+    border-radius: 15px;
+    border: 2px solid #0e1a42;
+    background: #CDDDF4;
+    box-shadow: 25px 25px rgba(0, 0, 0, 0.25);
+    overflow-y: auto;
+}
+
+.selectores_editar_paqueteria select{
+    background-color: #2f60b9;
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.selectores_editar_paqueteria button{
+    color: white;
+    font-weight: 700;
+    margin-left: 50px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.boton_agregar_soft_editar{
+    background-color: rgba(106,105,105);
+    border-radius: 10px;
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.boton_agregar_soft_editar:hover{
+    background-color: rgba(38,94,172);
+    box-shadow: 6px 6px #B8B8B8;
+}
+
+/*</editor-fold>*/
+
+/*</editor-fold>*/
+
+/*<editor-fold desc="ESTILO AREAS DE TEXTO">*/
+.group{
+    position:relative;
+    margin-bottom:45px;
+    width: 50%;
+}
+.group input{
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:450px;
+    border:none;
+    background-color: rgba(0, 0, 0, .0001);
+    color: #0B1B32;
+    font-size: 20px;
+    border-bottom:1px solid #757575;
+}
+.group input:focus{
+    outline:none;
+}
+/* LABEL */
+.group label{
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+/* active state */
+.group input:focus ~ label, input:valid ~ label{
+    top:-20px;
+    font-size:18px;
+    color:#255BA7;
+}
+/* active state forzado*/
+.labelactiva{
+    top:-20px;
+    font-size:18px;
+    color:#255BA7;
+}
+/* BOTTOM BARS */
+.bar { position:relative; display:block; width:450px; }
+.bar:before, .bar:after {
+    content:'';
+    height:2px;
+    width:0;
+    bottom:1px;
+    position:absolute;
+    background:#163764;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+.bar:before {
+    left:50%;
+}
+.bar:after {
+    right:50%;
+}
+/* active state */
+.group input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+}
+/* HIGHLIGHTER */
+.highlight{
+    position:absolute;
+    height:60%;
+    width:100px;
+    top:25%;
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+}
+/* active state */
+.group  input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+}
+/* ANIMATIONS */
+@-webkit-keyframes inputHighlighter {
+      from { background:#79A5E2; }
+    to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+      from { background:#79A5E2; }
+    to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+      from { background:#79A5E2; }
+    to 	{ width:0; background:transparent; }
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="ESTILO AREAS DE TEXTO PRECARGADAS">*/
+.group_lectura{
+    position:relative;
+    margin-bottom:45px;
+    width: 50%;
+}
+.group_lectura input{
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:450px;
+    border:none;
+    background-color: rgba(0, 0, 0, .0001);
+    color: #0B1B32;
+    font-size: 20px;
+    border-bottom:1px solid #757575;
+}
+.group_lectura input:focus{
+    outline:none;
+}
+/* LABEL */
+.group_lectura label{
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:-22px;
+    color:#255BA7;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+/* active state forzado*/
+.labelactiva{
+    top:-20px;
+    font-size:18px;
+    color:#255BA7;
+}
+/* BOTTOM BARS */
+.bar { position:relative; display:block; width:450px; }
+.bar:before, .bar:after {
+    content:'';
+    height:2px;
+    width:0;
+    bottom:1px;
+    position:absolute;
+    background:#163764;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+.bar:before {
+    left:50%;
+}
+.bar:after {
+    right:50%;
+}
+/* active state */
+.group_lectura input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+}
+/* HIGHLIGHTER */
+.highlight{
+    position:absolute;
+    height:60%;
+    width:100px;
+    top:25%;
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+}
+/* active state */
+.group_lectura  input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+}
+/* ANIMATIONS */
+@-webkit-keyframes inputHighlighter {
+      from { background:#79A5E2; }
+    to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+      from { background:#79A5E2; }
+    to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+      from { background:#79A5E2; }
+    to 	{ width:0; background:transparent; }
+}
+/*</editor-fold>*/

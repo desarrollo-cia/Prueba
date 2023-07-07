@@ -1,0 +1,56 @@
+<div class="formbold-main-wrapper" id="formbold-main-wrapper">
+  <div class="formbold-form-wrapper">
+    <form action="guardar_solicitud_BanorteRD" method="POST">
+      <div class="Contenedor_Generar_Archivos" id="Contenedor_Generar_Archivos">
+        <form method="post" action="generar_pdf" target="_blank">
+          {% csrf_token %}
+          <label>Selecciona el tipo de documento a generar:</label>
+          <select
+            name="Select_Tipo_Documento"
+            id="Select_Tipo_Documento"
+            onclick="Mostrar_Datos_Archivo()"
+          >
+            <option value="" selected hidden>Selecciona una</option>
+            {% for tipo in tipos_archivo %}
+            <option value="{{ tipo.id }}">{{ tipo.nombre }}</option>
+            {% endfor %}
+          </select>
+
+          <div id="Datos_Archivo_Responsiva" hidden="true">
+            <br /><br />
+            <!-- Numero de empleado ENCARGADO-->
+            <div class="group">
+              <input
+                type="text"
+                name="Numero_Empleado_Responsiva_encargado"
+                id="Numero_Empleado_Responsiva_encargado"
+              />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Numero de Empleado ENCARGADO</label>
+            </div>
+            <!-- Numero de empleado -->
+            <div class="group">
+              <input
+                type="text"
+                name="Numero_Empleado_Responsiva"
+                id="Numero_Empleado_Responsiva"
+              />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Numero de Empleado</label>
+            </div>
+            <input type="date" value="{% now " Y-m-d" %}"
+            name="fecha_subida_archivo" hidden="true">
+            <input
+              type="submit"
+              value="Generar"
+              class="Agregar_Archivo_Submit"
+            />
+          </div>
+          <div id="Datos_Archivo_CheckInstalaciones" hidden="true"></div>
+        </form>
+      </div>
+    </form>
+  </div>
+</div>
