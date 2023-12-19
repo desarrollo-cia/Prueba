@@ -1,508 +1,374 @@
-/*<editor-fold desc="TITULO DE LA PAGINA">*/
-.Titulo_Pagina{
-    padding-left: 220px;
-    font-size: 60px;
-    font-family: "Agency FB";
-    font-weight: 600;
-    color: #0B1B32;
-    text-shadow: 2px 2px 2px #2f60b9;
-    text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Lato:400,500,600,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-/*</editor-fold>*/
-
-/*<editor-fold desc="SELECTORES SOFTWARE">*/
-.Selectores_Software{
-    padding-top: 20px;
-    padding-left: 220px;
-    text-align: center;
-
+body {
+  font-family: "Inter", sans-serif;
+}
+.formbold-main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 
-.Selectores_Software Button{
-    background-color: rgba(106,105,105);
-    border-radius: 10px;
-    color: #f2f2f2;
-    font-size: 16px;
-    padding: 10px;
-    cursor: pointer;
+.formbold-form-wrapper {
+  margin: 0 auto;
+  max-width: 550px;
+  width: 100%;
 }
 
-.Selectores_Software Button:hover{
-    background-color: rgba(38,94,172);
-    box-shadow: 6px 6px #B8B8B8;
-}
-/*</editor-fold>*/
-
-/*<editor-fold desc="SECCION DE CONSULTA EN TABLA">*/
-.Tabla_Software{
-    padding-left: 220px;
-    padding-bottom: 100px;
-    margin: 50px;
+.formbold-form-title {
+  margin-bottom: 30px;
 }
 
-.Tabla_Consulta_Software tbody tr td{
-    border-top: 1px solid #153057;
-    color: #2f60b9;
-    font-size: 16px;
-    text-align: center;
+.formbold-form-title h1 {
+  font-weight: 600;
+  text-align: start;
+  font-size: 32px;
+  line-height: 34px;
+  color: #07074d;
+}
+.formbold-form-title h3 {
+  font-weight: 600;
+  text-align: start;
+  font-size: 32px;
+  line-height: 34px;
+  color: #07074d;
 }
 
-.Boton_Editar_Software{
-    background: rgba(245, 207, 20, 0.4);
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    width: 50px;
-    border-radius: 10px;
+.formbold-form-title p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #7281a8;
+  margin-top: 12px;
 }
 
-.Boton_Editar_Software:hover{
-    background: rgb(224, 186, 22);
-    color: white;
+.formbold-mb-3 {
+  margin-bottom: 15px;
 }
 
-.Boton_Eliminar_Software{
-    background: rgba(252, 21, 21, 0.4);
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    width: 50px;
-    border-radius: 10px;
+.formbold-input-flex {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.formbold-input-flex > div {
+  width: 50%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.formbold-mb-3 {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+.formbold-mb-3 > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.formbold-mb-6 {
+  margin-bottom: 30px;
 }
 
-.Boton_Eliminar_Software:hover{
-    background: rgba(252, 21, 21);
-    color: white;
+.formbold-mb-6 > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
 }
-/*</editor-fold>*/
-
-/*<editor-fold desc="POP-UP EDITAR SOFTEWARE">*/
-
-.contenedor_editar_software{
-    position: fixed;
-    width: 80%;
-    height: 80%;
-    left: 10%;
-    top: 10%;
-    background: #CDDDF4;
-    z-index: 200;
-    border-radius: 10px;
-    border: 3px solid #0B1B32;
-    box-shadow: 25px 25px rgba(0, 0, 0, 0.25);
-    overflow-y: auto;
+.formbold-textarea {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: start;
 }
 
-.boton_cerrar_popup{
-    background: red;
-    position: absolute;
-    border: none;
-    width: 35px;
-    height: 22px;
-    border-radius: 5px;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    right: 2%;
-    top: 3%;
+.formbold-form-input {
+  width: 100%;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #dde3ec;
+  background: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  color: #07074d;
+  outline: none;
+  resize: none;
 }
 
-.boton_cerrar_popup:hover{
-    box-shadow: 3px 3px rgba(255, 0, 0, 0.40);
+.formbold-form-input-table {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  outline: none;
+  resize: none;
 }
 
-.Titulo_PopUp{
-    position: absolute;
-    width: 20%;
-    top: 5%;
-    left: 40%;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
+.formbold-form-label-table {
+  color: #07074d;
+  font-weight: 500;
+  font-size: 12px;
+  display: block;
+  opacity: 0.5;
 }
 
-.Elementos_Editables{
-    position: absolute;
-    top: 15%;
-    left: 5%;
+.formbold-form-input::placeholder {
+  color: #d0d5e2;
+}
+.formbold-form-input:focus {
+  border-color: rgb(32, 94, 172);
+}
+.formbold-form-label {
+  color: #07074d;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: block;
+  margin-bottom: 9px;
+}
+.formbold-form-input:focus + .formbold-form-label {
+  color: rgb(32, 94, 172);
 }
 
-.Agregar_Software{
-    padding-left: 300px;
-    padding-top: 75px;
-    padding-bottom: 100px;
-    display: none;
+.formbold-input-file {
+  margin-top: 30px;
 }
-/*</editor-fold>*/
-
-/*<editor-fold desc="SECCION DE AGREGAR SOFTWARE">*/
-.Agregar_Software_Submit{
-    background-color: rgba(106,105,105);
-    border-radius: 10px;
-    color: #f2f2f2;
-    font-size: large;
-    margin: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 10px 10px 10px 10px;
-    cursor: pointer;
-    top: 50%;
-    left: 50%;
+.formbold-input-file input[type="file"] {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  z-index: -1;
+}
+.formbold-input-file .formbold-input-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
 }
 
-.Agregar_Software_Submit:hover{
-    background-color: rgba(38,94,172);
-    box-shadow: 3px 3px #B8B8B8;
+.formbold-filename-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 22px;
 }
-/*</editor-fold>*/
-
-/*<editor-fold desc="SECCION DE MANEJO DE PAQUETERIAS">*/
-.Administrar_Paqueterias{
-    padding-left: 220px;
-    padding-bottom: 100px;
-    margin: 50px;
-    display: none;
+.formbold-filename {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 24px;
+  color: #d0d5e2;
 }
-
-.Selectores_Paqueterias{
-    text-align: center;
-    padding-right: 55px;
-}
-
-.Selectores_Paqueterias Button{
-    background-color: rgba(106,105,105);
-    border-radius: 10px;
-    color: #f2f2f2;
-    font-size: 14px;
-    padding: 6px;
-    cursor: pointer;
+.formbold-filename svg {
+  cursor: pointer;
 }
 
-.Selectores_Paqueterias Button:hover{
-    background-color: rgba(38,94,172);
-    box-shadow: 6px 6px #B8B8B8;
+.formbold-btn {
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 14px 25px;
+  border: none;
+  font-weight: 500;
+  background-color: rgba(38, 94, 172);
+  color: white;
+  cursor: pointer;
+  margin: 25px 0;
+  transition: background-color 0.5s ease;
+  transition: font-size 0.5s ease;
 }
 
-/*<editor-fold desc="SECCION AGREGAR PAQUETERIA">*/
-.Contenedor_Agregar_Paqueteria{
-    display: none;
-    padding-top: 75px;
+.formbold-btn:hover {
+  background-color: rgba(34, 84, 154);
+  font-size: 18px;
 }
 
-.Agregar_Select_Software button{
-    background-color: rgba(106,105,105);
-    color: white;
-    padding: 5px;
-    font-weight: 700;
-    font-size: 18px;
-    -webkit-appearance: button;
-    outline: none;
-    cursor: pointer;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    border-radius: 12px;
-    margin-left: 20px;
+.formbold-btn-table {
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  font-weight: 500;
+  background: #7ab116;
+  color: white;
+  cursor: pointer;
+  align-text: center;
+  margin: 25px 0;
+  transition: background-color 0.5s ease;
+  transition: font-size 0.5s ease;
 }
 
-.Agregar_Select_Software button:hover{
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.45);
-    background-color: rgba(38,94,172);
+.formbold-btn:hover {
+  background-color: rgba(34, 84, 154);
+  font-size: 18px;
 }
 
-.Agregar_Select_Software select{
-    background-color: #2f60b9;
-    color: white;
-    font-size: 16px;
-    margin-top: 20px;
-    outline: none;
-    cursor: pointer;
-    border-radius: 10px;
-}
-/*</editor-fold>*/
-
-/*<editor-fold desc="SECCION CONSULTAR PAQUETERIAS">*/
-.Contenedor_Consultar_Paqueterias{
-    padding-top: 75px;
-    padding-right: 50px;
+.formbold-btn-nav {
+  display: flex;
+  aligm-items: center;
+  justify-content: center;
 }
 
-.tabla_paqueteria_software tbody tr td{
-    border-top: 1px solid #153057;
-    color: #2f60b9;
-    font-size: 18px;
-    text-align: center;
+.formblod-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.Boton_Editar_Paqueteria{
-    background: rgba(245, 207, 20, 0.4);
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
-    width: 50px;
-    border-radius: 10px;
+.formbold-form-icon {
+  height: 150px;
+  opacity: 0.5;
 }
 
-.Boton_Editar_Paqueteria:hover{
-    background: rgb(224, 186, 22);
-    color: white;
-    box-shadow: 4px 4px rgba(245, 207, 20, 0.6);
+.formbold-btn-tabla {
+  font-size: 16px;
+  width: 25%;
+  border-radius: 5px;
+  padding: 8px 12px;
+  border: none;
+  font-weight: 500;
+  background-color: rgba(38, 94, 172);
+  color: white;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: background-color 0.5s ease;
+  transition: font-size 0.5s ease;
 }
 
-
-.Boton_Eliminar_Paqueteria{
-    background: rgba(252, 21, 21, 0.4);
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
-    width: 50px;
-    border-radius: 10px;
+.formbold-btn-tabla:hover {
+  background-color: rgba(34, 84, 154);
+  font-size: 18px;
 }
 
-.Boton_Eliminar_Paqueteria:hover{
-    background: rgba(252, 21, 21);
-    color: white;
+.formbold-i {
+  color: rgb(38, 94, 172);
+  margin-left: 10px;
+  transition: all 0.5s ease;
 }
 
-/*</editor-fold>*/
-
-/*<editor-fold desc="SECCION EDITAR PAQUETERIAS">*/
-.popup_editar_paqueteria{
-    position: fixed;
-    width: 80%;
-    height: 80%;
-    top: 10%;
-    left: 10%;
-    z-index: 300;
-    border-radius: 15px;
-    border: 2px solid #0e1a42;
-    background: #CDDDF4;
-    box-shadow: 25px 25px rgba(0, 0, 0, 0.25);
-    overflow-y: auto;
+.formbold-i::hover {
+  font-size: 2rem;
 }
 
-.selectores_editar_paqueteria select{
-    background-color: #2f60b9;
-    color: white;
-    font-size: 16px;
-    margin-top: 20px;
-    outline: none;
-    cursor: pointer;
-    border-radius: 10px;
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 50%;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #045ca4;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
 }
 
-.selectores_editar_paqueteria button{
-    color: white;
-    font-weight: 700;
-    margin-left: 50px;
-    border-radius: 6px;
-    cursor: pointer;
+.cnt {
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  transition: opacity 0.75%;
+  visibility: 0.75%;
+}
+.cnt-btn {
+  display: flex;
+  justify-content: center;
+  aligma-align: center;
 }
 
-.boton_agregar_soft_editar{
-    background-color: rgba(106,105,105);
-    border-radius: 10px;
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 6px;
-    cursor: pointer;
+@media (min-width: 900px) {
+  .lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 15%;
+  }
 }
 
-.boton_agregar_soft_editar:hover{
-    background-color: rgba(38,94,172);
-    box-shadow: 6px 6px #B8B8B8;
+.formbold-radio-label {
+  font-size: 14px;
+  line-height: 24px;
+  color: #07074D;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.formbold-input-radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.formbold-radio-checkmark {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #FFFFFF;
+  border: 1px solid #DDE3EC;
+  border-radius: 50%;
+}
+.formbold-radio-label .formbold-input-radio:checked ~ .formbold-radio-checkmark {
+  background-color: rgb(38, 94, 172);
+}
+.formbold-radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
 }
 
-/*</editor-fold>*/
+.formbold-radio-label .formbold-input-radio:checked ~ .formbold-radio-checkmark:after {
+  display: block;
+}
 
-/*</editor-fold>*/
-
-/*<editor-fold desc="ESTILO AREAS DE TEXTO">*/
-.group{
-    position:relative;
-    margin-bottom:45px;
-    width: 50%;
+.formbold-radio-label .formbold-radio-checkmark:after {
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  transform: translate(-50%, -50%);
 }
-.group input{
-    font-size:18px;
-    padding:10px 10px 10px 5px;
-    display:block;
-    width:450px;
-    border:none;
-    background-color: rgba(0, 0, 0, .0001);
-    color: #0B1B32;
-    font-size: 20px;
-    border-bottom:1px solid #757575;
-}
-.group input:focus{
-    outline:none;
-}
-/* LABEL */
-.group label{
-    color:#999;
-    font-size:18px;
-    font-weight:normal;
-    position:absolute;
-    pointer-events:none;
-    left:5px;
-    top:10px;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
-}
-/* active state */
-.group input:focus ~ label, input:valid ~ label{
-    top:-20px;
-    font-size:18px;
-    color:#255BA7;
-}
-/* active state forzado*/
-.labelactiva{
-    top:-20px;
-    font-size:18px;
-    color:#255BA7;
-}
-/* BOTTOM BARS */
-.bar { position:relative; display:block; width:450px; }
-.bar:before, .bar:after {
-    content:'';
-    height:2px;
-    width:0;
-    bottom:1px;
-    position:absolute;
-    background:#163764;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
-}
-.bar:before {
-    left:50%;
-}
-.bar:after {
-    right:50%;
-}
-/* active state */
-.group input:focus ~ .bar:before, input:focus ~ .bar:after {
-    width:50%;
-}
-/* HIGHLIGHTER */
-.highlight{
-    position:absolute;
-    height:60%;
-    width:100px;
-    top:25%;
-    left:0;
-    pointer-events:none;
-    opacity:0.5;
-}
-/* active state */
-.group  input:focus ~ .highlight {
-    -webkit-animation:inputHighlighter 0.3s ease;
-    -moz-animation:inputHighlighter 0.3s ease;
-    animation:inputHighlighter 0.3s ease;
-}
-/* ANIMATIONS */
-@-webkit-keyframes inputHighlighter {
-      from { background:#79A5E2; }
-    to 	{ width:0; background:transparent; }
-}
-@-moz-keyframes inputHighlighter {
-      from { background:#79A5E2; }
-    to 	{ width:0; background:transparent; }
-}
-@keyframes inputHighlighter {
-      from { background:#79A5E2; }
-    to 	{ width:0; background:transparent; }
-}
-/*</editor-fold>*/
-
-/*<editor-fold desc="ESTILO AREAS DE TEXTO PRECARGADAS">*/
-.group_lectura{
-    position:relative;
-    margin-bottom:45px;
-    width: 50%;
-}
-.group_lectura input{
-    font-size:18px;
-    padding:10px 10px 10px 5px;
-    display:block;
-    width:450px;
-    border:none;
-    background-color: rgba(0, 0, 0, .0001);
-    color: #0B1B32;
-    font-size: 20px;
-    border-bottom:1px solid #757575;
-}
-.group_lectura input:focus{
-    outline:none;
-}
-/* LABEL */
-.group_lectura label{
-    color:#999;
-    font-size:18px;
-    font-weight:normal;
-    position:absolute;
-    pointer-events:none;
-    left:5px;
-    top:-22px;
-    color:#255BA7;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
-}
-/* active state forzado*/
-.labelactiva{
-    top:-20px;
-    font-size:18px;
-    color:#255BA7;
-}
-/* BOTTOM BARS */
-.bar { position:relative; display:block; width:450px; }
-.bar:before, .bar:after {
-    content:'';
-    height:2px;
-    width:0;
-    bottom:1px;
-    position:absolute;
-    background:#163764;
-    transition:0.2s ease all;
-    -moz-transition:0.2s ease all;
-    -webkit-transition:0.2s ease all;
-}
-.bar:before {
-    left:50%;
-}
-.bar:after {
-    right:50%;
-}
-/* active state */
-.group_lectura input:focus ~ .bar:before, input:focus ~ .bar:after {
-    width:50%;
-}
-/* HIGHLIGHTER */
-.highlight{
-    position:absolute;
-    height:60%;
-    width:100px;
-    top:25%;
-    left:0;
-    pointer-events:none;
-    opacity:0.5;
-}
-/* active state */
-.group_lectura  input:focus ~ .highlight {
-    -webkit-animation:inputHighlighter 0.3s ease;
-    -moz-animation:inputHighlighter 0.3s ease;
-    animation:inputHighlighter 0.3s ease;
-}
-/* ANIMATIONS */
-@-webkit-keyframes inputHighlighter {
-      from { background:#79A5E2; }
-    to 	{ width:0; background:transparent; }
-}
-@-moz-keyframes inputHighlighter {
-      from { background:#79A5E2; }
-    to 	{ width:0; background:transparent; }
-}
-@keyframes inputHighlighter {
-      from { background:#79A5E2; }
-    to 	{ width:0; background:transparent; }
-}
-/*</editor-fold>*/

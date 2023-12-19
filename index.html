@@ -1,33 +1,451 @@
-<div class="formbold-main- mt-5">
-	<div class="formbold-form-wrapper" style="background-color: transparent;">
-	<form method="post" action="actualizar_equipo_datos">
-		{% csrf_token %}
-		<label>N° del Activo: <span><h3>{{ equipo_editar_motivos.numero_activo }}</h3></span></label>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
 
-		<div class="formbold-mb-3 mt-3">
-			<div>
-				<label for="Motivo_Actualizacion" class="formbold-form-label">
-					Motivo:
-				</label>
-				<input type="text" name="Motivo_Actualizacion" id="Motivo_Actualizacion" class="formbold-form-input"
-					placeholder="Ingresa el motvo del cambio" />
-			</div>
-		</div>
-		<div class="formbold-input-mb-3">
-			<div class="formbold-textarea">
-				<textarea
-					rows="6"
-					name="Anotaciones"
-					id="Anotaciones"
-					placeholder="Escribe tus Anotaciones..."
-					class="formbold-form-input"
-				></textarea>
-				<label for="Anotaciones" class="formbold-form-label"> Anotaciones </label>
-			</div>
-		</div>
-		<input type="hidden" name="numero_activo" value="{{ equipo_editar_motivos.numero_activo }}">
-		<input type="hidden" name="fecha" value="{% now "Y-m-d" %}">
-			<input type="submit" value="Continuar" class="Agregar_Equipo_Submit ">
-	</form>
-</div>
-	</div>
+  </head>
+  <body>
+    <div class="formbold-main-wrapper">
+      <div class="formbold-form-wrapper">
+        <form method="POST">
+          <div class="formbold-input-radio-wrapper mt-3">
+            <label for="radio" class="formbold-form-label">P1 Buenos/as dias/tarde/noche, trabajo para la empresa encuestadora **************, en esta ocasión estamos realizando un estudio sobre percepción y 
+              conocimiento de marca los datos utilizados en este estudio serán utilizados con fines estadísticos, le gustaría participar </label>
+              <div class="formbold-radio-flex ms-4">
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio" id="radio_Si_1" value="Si">
+                          1. Si
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio" id="radio_No_1" value="No">
+                          2. NO (Agradecer y terminar) registrar incidencia.
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <input type="hidden" id="respuesta_p" value="">
+              </div>
+          </div>   
+          <label for="radio" class="formbold-form-label mt-5">Hola, Gracias por participar en esta encuesta. Siéntete totalmente libre de expresar lo que verdaderamente piensas.</label>
+          
+          <h4 class="text-center mt-5 p-3 ">CLASIFIACION</h4>
+          
+          <div class="formbold-input-radio-wrapper mt-3">
+            <label for="radio" class="formbold-form-label">P1 ¿Tu género es… por observación?</label>
+              <div class="formbold-radio-flex ms-4">
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_1" id="radio_mujer" value="Hombre">
+                          1.	Mujer  
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_1" id="radio_hombre" value="Mujer">
+                          2.	Hombre
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <input type="hidden" id="respuesta_p1" value="">
+              </div>
+          </div> 
+
+          <div class="formbold-input-radio-wrapper mt-3">
+            <label for="radio" class="formbold-form-label">P2 ¿Cuántos años tienes?: </label>
+              <div class="formbold-radio-flex ms-4">
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_17" value="Hombre">
+                          1.	Menos de 18 años
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_18" value="Mujer">
+                          2.	18-25 años
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_25" value="Mujer">
+                          3.	26 -35 años
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_35" value="Mujer">
+                          4.	36-45 años
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_45" value="Mujer">
+                          5.	46-55 años
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_55" value="Mujer">
+                          6.	56-60 años
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_mas_60" value="Mujer">
+                          7.	Más de 60 años
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <input type="hidden" id="respuesta_p2" value="">
+              </div>
+          </div> 
+
+          <div class="formbold-input-radio-wrapper mt-3">
+            <label for="radio" class="formbold-form-label">P3 ¿Dónde vives? </label>
+              <div class="formbold-radio-flex ms-4">
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_panama" value="Hombre">
+                          1.	Ciudad de Panamá
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_Chiriqui" value="Mujer">
+                          2.	Chiriquí/ Bocas del Toro (Occidente)
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_Cocle" value="Mujer">
+                          3.	Coclé
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_Herrera" value="Mujer">
+                          4.	Herrera
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_Santos" value="Mujer">
+                          5.	Los Santos
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_Veraguas" value="Mujer">
+                          6.	Veraguas
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_3" id="radio_Otra" value="Mujer">
+                          7.	Otra región de Panamá
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <input type="hidden" id="respuesta_p3" value="">
+              </div>
+          </div> 
+
+          <div class="formbold-input-radio-wrapper mt-3">
+            <label for="radio" class="formbold-form-label">P4 ¿Usted o alguien que vive en su hogar trabaja en alguna de las siguientes actividades?</label>
+              <div class="formbold-radio-flex ms-4">
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_4" id="radio_p4_1" value="Hombre">
+                          1.	Medios de comunicación (TV, Radio, Prensa, Periódicos, Revistas)
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_4" id="radio_p4_2" value="Mujer">
+                          2.	Investigación de mercado / Consultoría
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_4" id="radio_p4_3" value="Mujer">
+                          3.	Publicidad / Relaciones Públicas
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_4" id="radio_p4_4" value="Mujer">
+                          4.	Fabricante / Distribuidor / Minorista de bebidas (Supermercados/ Tiendas de conveniencia / Chinitos)
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_4" id="radio_p4_5" value="Mujer">
+                          5.	Bar / Restaurantes
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_4" id="radio_p4_6" value="Mujer">
+                          6.	Ninguna de las anteriores
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <input type="hidden" id="respuesta_p4" value="">
+              </div>
+          </div> 
+
+          <div class="formbold-input-radio-wrapper mt-3">
+            <label for="radio" class="formbold-form-label">P5 ¿Cuál es el ingreso total mensual de su hogar?</label>
+              <div class="formbold-radio-flex ms-4">
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_5" id="radio_p5_1" value="Hombre">
+                          1.	Menos de $400
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_5" id="radio_p5_2" value="Mujer">
+                          2.	$400 a $599
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_5" id="radio_p5_3" value="Mujer">
+                          3.	$600 a $799
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_5" id="radio_p5_4" value="Mujer">
+                          4.	$800 a $999
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_5" id="radio_p5_5" value="Mujer">
+                          5.	$1,000 a $1,499
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_5" id="radio_p5_6" value="Mujer">
+                          6.	$1,500 a $2,500
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_5" id="radio_p5_7" value="Mujer">
+                          7.	Más de $2,500
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_5" id="radio_p5_8" value="Mujer">
+                          8.	No sabe
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <input type="hidden" id="respuesta_p5" value="">
+              </div>
+          </div> 
+
+          <div class="formbold-input-radio-wrapper mt-3">
+            <label for="radio" class="formbold-form-label">P6 ¿Participó en alguna encuesta o grupo de discusión sobre TIENDAS POR DEPARTAMENTO en el último mes?</label>
+              <div class="formbold-radio-flex ms-4">
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_6" id="radio_p6_1" value="Hombre">
+                          1.	Si
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_6" id="radio_p6_2" value="Mujer">
+                          2.	No
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <input type="hidden" id="respuesta_p6" value="">
+              </div>
+          </div> 
+
+          <div class="formbold-input-radio-wrapper mt-3">
+            <label for="radio" class="formbold-form-label">P7 ¿Cuándo fue la última vez que visitó una [TIENDA POR DEPARTAMENTO]?</label>
+              <div class="formbold-radio-flex ms-4">
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_7" id="radio_p7_1" value="Hombre">
+                          1.	 En la última semana
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_7" id="radio_p7_2" value="Mujer">
+                          2.	 Entre 2 y 4 semanas atrás
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_7" id="radio_p7_3" value="Mujer">
+                          3.	 Hace más de 1 mes
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_7" id="radio_p7_4" value="Mujer">
+                          4.	 Nunca las he visitado
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <input type="hidden" id="respuesta_p7" value="">
+              </div>
+          </div> 
+
+          <div class="formbold-input-radio-wrapper mt-3">
+            <label for="radio" class="formbold-form-label">P8 ¿Con que frecuencia visita tiendas por departamento?</label>
+              <div class="formbold-radio-flex ms-4">
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_8" id="radio_p8_1" value="Hombre">
+                          1.	Por lo menos una vez a la semana 
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_8" id="radio_p8_2" value="Mujer">
+                          2.	4 a 6 veces por mes
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_8" id="radio_p8_3" value="Mujer">
+                          3.	2 a 3 veces por mes
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_8" id="radio_p8_4" value="Mujer">
+                          4.	1 vez por mes
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_8" id="radio_p8_5" value="Mujer">
+                          5.	Con menor frecuencia
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_8" id="radio_p8_6" value="Mujer">
+                          6.	No sabe/no recuerda
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <input type="hidden" id="respuesta_p8" value="">
+              </div>
+          </div> 
+
+          <h4 class="text-center mt-5 p-3 ">CONOCIMEINTO DE MARCA</h4>
+
+          <div class="formbold-input-radio-wrapper mt-3">
+            <label for="radio" class="formbold-form-label">PREG1. Hablando de TIENDAS POR DEPARTAMENTO, cual es la primera que le viene a la mente:</label>
+              <div class="formbold-radio-flex ms-4">
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_9" id="radio_p9_1" value="Hombre">
+                          1. Walmar 
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_9" id="radio_p9_2" value="Mujer">
+                          2. Soriano
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_9" id="radio_p9_3" value="Mujer">
+                          3. Aurrera
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_9" id="radio_p9_4" value="Mujer">
+                          4. Waldo
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_9" id="radio_p9_5" value="Mujer">
+                          5. 6B
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+                  <div class="formbold-radio-group">
+                      <label class="formbold-radio-label">
+                          <input class="formbold-input-radio" type="radio" name="radio_9" id="radio_p9_5" value="Mujer">
+                          6. Otro
+                      <span class="formbold-radio-checkmark"></span>
+                      </label>
+                  </div>
+
+                  <input type="hidden" id="respuesta_p9" value="">
+              </div>
+          </div> 
+
+        </form>
+      </div>
+    </div>
+    
+  </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

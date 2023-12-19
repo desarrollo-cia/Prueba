@@ -1,56 +1,169 @@
-<div class="formbold-main-wrapper" id="formbold-main-wrapper">
-  <div class="formbold-form-wrapper">
-    <form action="guardar_solicitud_BanorteRD" method="POST">
-      <div class="Contenedor_Generar_Archivos" id="Contenedor_Generar_Archivos">
-        <form method="post" action="generar_pdf" target="_blank">
-          {% csrf_token %}
-          <label>Selecciona el tipo de documento a generar:</label>
-          <select
-            name="Select_Tipo_Documento"
-            id="Select_Tipo_Documento"
-            onclick="Mostrar_Datos_Archivo()"
-          >
-            <option value="" selected hidden>Selecciona una</option>
-            {% for tipo in tipos_archivo %}
-            <option value="{{ tipo.id }}">{{ tipo.nombre }}</option>
-            {% endfor %}
-          </select>
-
-          <div id="Datos_Archivo_Responsiva" hidden="true">
-            <br /><br />
-            <!-- Numero de empleado ENCARGADO-->
-            <div class="group">
-              <input
-                type="text"
-                name="Numero_Empleado_Responsiva_encargado"
-                id="Numero_Empleado_Responsiva_encargado"
-              />
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label>Numero de Empleado ENCARGADO</label>
-            </div>
-            <!-- Numero de empleado -->
-            <div class="group">
-              <input
-                type="text"
-                name="Numero_Empleado_Responsiva"
-                id="Numero_Empleado_Responsiva"
-              />
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label>Numero de Empleado</label>
-            </div>
-            <input type="date" value="{% now " Y-m-d" %}"
-            name="fecha_subida_archivo" hidden="true">
-            <input
-              type="submit"
-              value="Generar"
-              class="Agregar_Archivo_Submit"
-            />
+            <div class="formbold-main-wrapper">
+              <div class="formbold-form-wrapper" style="background-color: transparent;">
+                  <div class="formbold-input-flex">
+                      <div>
+                          <input
+                          value="{{ equipo_detalles.numero_activo }}"
+                          class="formbold-form-input-modal"     
+                          disabled 
+                          />
+                          <label for="imei" class="formbold-form-label"> Numero de Activo: </label>
+                      </div>
+                      <div>
+                          <input
+                          value="{{ equipo_detalles.activo }}"
+                          class="formbold-form-input-modal"
+                          disabled      
+                          />
+                          <label for="imei" class="formbold-form-label"> Activo: </label>
+                      </div>
+                  </div>
+                  <div class="formbold-input-flex mt-5">
+                      <div>
+                          <input
+                          value="{{ equipo_detalles.marca }}"
+                          class="formbold-form-input-modal"
+                          disabled      
+                          />
+                          <label for="imei" class="formbold-form-label"> Marca: </label>
+                      </div>
+                      <div>
+                          <input
+                          value="{{ equipo_detalles.modelo }}"
+                          class="formbold-form-input-modal"
+                          disabled      
+                          />
+                          <label for="imei" class="formbold-form-label"> Modelo </label>
+                      </div>
+                  </div>
+                  <div class="formbold-input-flex mt-5">
+                      <div>
+                          <input
+                          value="{{ equipo_detalles.numero_serie }}"
+                          class="formbold-form-input-modal"
+                          disabled      
+                          />
+                          <label for="imei" class="formbold-form-label"> N° Serie: </label>
+                      </div>
+                      <div>
+                          <input
+                          value="{{ equipo_detalles.condiciones }}"
+                          class="formbold-form-input-modal"
+                          disabled      
+                          />
+                          <label for="imei" class="formbold-form-label"> Condiciones: </label>
+                      </div>
+                  </div>
+                  <div class="formbold-input-flex mt-5">
+                      <div>
+                          <input
+                          value="{{ equipo_detalles.accesorios }}"
+                          class="formbold-form-input-modal"
+                          disabled      
+                          />
+                          <label for="imei" class="formbold-form-label"> Accesosrios </label>
+                      </div>
+                      <div>
+                          <input
+                          value="{{ equipo_detalles.estado }}"
+                          class="formbold-form-input-modal"
+                          disabled      
+                          />
+                          <label for="imei" class="formbold-form-label"> Estado: </label>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div id="Datos_Archivo_CheckInstalaciones" hidden="true"></div>
-        </form>
+    </div>
+              {% if equipo_detalles.activo == "CELULAR" %}
+                  {% for cel in celular %}
+                      {% if cel.equipo_id_id == equipo_detalles.numero_activo %}
+                          <!-- IMEI --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ cel.imei }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>IMEI</label>
+                          </div>
+                          <!-- TELEFONO --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ cel.telefono }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>Telefono</label>
+                          </div>
+                      {% endif %}
+                  {% endfor %}
+              {% endif %}
+              {% if equipo_detalles.activo == "COMPUTADORA" or equipo_detalles.activo == "LAPTOP" or equipo_detalles.activo == "MACBOOK" or equipo_detalles.activo == "SERVIDOR" or equipo_detalles.activo == "SWITCH" or equipo_detalles.activo == "FIREWALL" or equipo_detalles.activo == "BIOMETRICO DE HUELLA DIGITAL"%}
+                  {% for compu in computadora %}
+                      {% if compu.equipo_id_id == equipo_detalles.numero_activo %}
+                          <!-- Procesador --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ compu.procesador }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>Procesador</label>
+                          </div>
+                          <!-- IPV4 --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ compu.ipv4 }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>IPV4</label>
+                          </div>
+                          <!-- MAC Adress --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ compu.mac_adress }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>MAC Adress</label>
+                          </div>
+                          <!-- RAM --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ compu.ram }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>RAM</label>
+                          </div>
+                          <!-- Almacenamiento --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ compu.almacenamiento }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>Almacenamiento</label>
+                          </div>
+                          <!-- Capacidad --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ compu.capacidad }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>Capacidad</label>
+                          </div>
+                          <!-- Nombre de la Maquina --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ compu.nombre_maquina }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>Nombre de la Maquina</label>
+                          </div>
+                          <!-- Sistema Operativo --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ compu.sistemas_operativo }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>Sistema Operativo</label>
+                          </div>
+                          <!-- Office --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ compu.office }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>Office</label>
+                          </div>
+                          <!-- Antivirus --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ compu.antivirus }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>Antivirus</label>
+                          </div>
+                          <!-- Paqueteria --><div class="group_lectura">
+                              <input type="text" name="_detalles" value="{{ compu.tipo_software_id.nombre }}" readonly/>
+                              <span class="highlight"></span>
+                              <span class="bar"></span>
+                              <label>Paqueteria de Software</label>
+                          </div>
+                      {% endif %}
+                  {% endfor %}
+              {% endif %}
+          </div>
       </div>
-    </form>
-  </div>
-</div>
